@@ -1,0 +1,88 @@
+/* Основной контейнер слайдера */
+.slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #282c34;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: white;
+  }
+  
+  /* Контейнер для картинок */
+  .slider__image.container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  /* Стили для картинок */
+  .slider__image {
+    width: 100%;
+    height: auto;
+    display: none;
+    border-radius: 10px;
+  }
+  
+  /* Подпись под картинкой */
+  .slider__caption {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    transition: opacity 0.5s ease;
+  }
+  
+  /* Контролы - точки */
+  .slider__controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .slider__control {
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    background-color: #555;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Стили для активного контрола */
+  .slider__control.active {
+    background-color: #007bff;
+  }
+  
+  /* Hover и активное состояние контролов */
+  .slider__control:hover {
+    background-color: #007bff;
+  }
+  
+  .slider__control:focus {
+    outline: none;
+    transform: scale(1.2);
+  }
+  
+  /* Показываем текущий слайд */
+  .slider__image.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  /* Анимация смены слайдов */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
