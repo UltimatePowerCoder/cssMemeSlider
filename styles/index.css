@@ -14,7 +14,6 @@ body {
 .slider {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   padding: 2rem;
   max-width: 100%;
@@ -23,12 +22,13 @@ body {
   border-radius: 1rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
   color: white;
+  transition: height 0.5s ease;
 }
 
 /* Контейнер для картинок */
 .slider__image-container {
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   border-radius: 1rem;
 }
 
@@ -38,11 +38,21 @@ body {
   height: auto;
   display: none;
   border-radius: 1rem;
+  opacity: 0;
+  padding-top: 1.5rem;
+  transition: opacity 0.5s ease;
 }
 
-.slider__bottom{
+.slider__image.active {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.slider__bottom {
   display: flex;
-  
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Подпись под картинкой */
@@ -63,7 +73,6 @@ body {
 .slider__controls {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
 }
 
 .slider__control {
@@ -74,7 +83,8 @@ body {
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  padding: 0.3rem; /* Увеличиваем область нажатия */
+  padding: 0.3rem;
+  /* Увеличиваем область нажатия */
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -103,6 +113,7 @@ body {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -113,5 +124,41 @@ body {
   .slider {
     width: 100%;
     padding: 1rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .slider {
+    width: 100%;
+    padding: 1.8rem;
+  }
+
+  .slider__bottom {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .slider__controls {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .slider {
+    width: 100%;
+    padding: 1.8rem;
+  }
+
+  .slider__bottom {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .slider__controls {
+    margin-top: 1rem;
   }
 }
