@@ -64,7 +64,6 @@ body {
 
 .slider__description {
   position: relative;
-  /* height: 1.5rem; Задаем фиксированную высоту для области с подписью */
 }
 
 #slide1:checked~.slider__bottom .slider__description p:nth-child(1),
